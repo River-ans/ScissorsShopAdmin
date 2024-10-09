@@ -76,7 +76,7 @@ export default function LoginForm() {
           disabled={loading}
           className='mt-4'
         >
-          {loading ? <Loader size={'medium'} /> : <span>로그인</span>}
+          {loading ? <Loader size={'medium'} /> : <span>Login</span>}
         </Button>
       </form>
     </div>
