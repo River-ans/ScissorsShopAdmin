@@ -3,25 +3,103 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #ebf3f5;
+  --foreground: rgb(23 23 23);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+@layer components {
+  button {
+    &.btn {
+      @apply flex items-center justify-center gap-1;
+    }
+    &.primary {
+      @apply bg-primary-900 text-primary-200 font-bold;
+    }
+    &.small {
+      @apply py-1 px-2 text-sm;
+    }
+    &.medium {
+      @apply py-2 px-4 text-base h-11;
+    }
+    &.large {
+      @apply py-2 px-4 text-lg;
+    }
+    &:focus {
+      @apply focus:outline-none focus:ring-2 focus:ring-primary-300;
+    }
+    &:hover {
+      @apply bg-opacity-80;
+    }
+    &:disabled {
+      @apply bg-opacity-80;
+    }
+  }
+  input {
+    &.primary {
+      @apply bg-primary-300	bg-opacity-30 border border-solid border-primary-100 placeholder:text-primary-400 focus:outline-1 focus:outline-primary-900 focus:bg-opacity-50;
+    }
+    &.medium {
+      @apply py-2 px-4  text-base h-11;
+    }
+    &:hover {
+      @apply bg-opacity-50;
+    }
+    &:disabled {
+      @apply bg-opacity-50;
+    }
+  }
+
+  .loader {
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    &.small {
+      width: 10px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+    }
+    &.medium {
+      width: 15px;
+      height: 15px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+    }
+    &.large {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .primary-blur-card {
+    @apply bg-white	bg-opacity-50 backdrop-blur-xl rounded-lg shadow-sm p-8;
   }
 }
