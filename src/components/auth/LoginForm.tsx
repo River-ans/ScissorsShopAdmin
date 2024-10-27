@@ -18,6 +18,12 @@ export default function LoginForm() {
     const email = emailRef.current?.value; // email 입력값
     const password = passwordRef.current?.value; // password 입력값
 
+    if (!email || !password) {
+      setError('이메일과 비밀번호를 모두 입력해주세요.');
+      setLoading(false);
+      return;
+    }
+
     //로그인성공 시물레이션
     setTimeout(() => {
       setLoading(false);
@@ -28,7 +34,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className='content-center min-w-max w-full primary-blur-card relative'>
+    <div className='content-center min-w-max w-full primary-blur-card relative bg-primary-200'>
       <div className='absolute top-8 left-8 z-50'>
         <BrandLogoSvg />
       </div>
@@ -44,30 +50,29 @@ export default function LoginForm() {
         {error && <p className='text-red-500'>{error}</p>}
         <label
           htmlFor='email'
-          className='flex gap-1 items-center text-sm text-primary-600'
+          className='items-center text-sm text-primary-600'
         >
           Email
+          <RefInput
+            id='email'
+            type='email'
+            fullWidth={true}
+            placeholder='you@example.com'
+            disabled={loading}
+            ref={emailRef} // ref를 통해 DOM에 접근
+          />
         </label>
-        <RefInput
-          id='email'
-          type='email'
-          fullWidth={true}
-          placeholder='you@example.com'
-          disabled={loading}
-          ref={emailRef} // ref를 통해 DOM에 접근
-        />
-
         <label htmlFor='password' className='text-sm text-sm text-primary-600'>
           Password
+          <RefInput
+            id='password'
+            type='password'
+            fullWidth={true}
+            placeholder='************'
+            disabled={loading}
+            ref={passwordRef}
+          />
         </label>
-        <RefInput
-          id='password'
-          type='password'
-          fullWidth={true}
-          placeholder='************'
-          disabled={loading}
-          ref={passwordRef}
-        />
         <Button
           type='submit'
           variant='primary'

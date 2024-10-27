@@ -1,3 +1,4 @@
+import Sidebar from '@/components/shared/Sidebar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,7 +13,11 @@ export default function MainLayout({
 }>) {
   return (
     <>
-      <div className='h-dvh font-[family-name:var(--font-geist-sans)]'>
+      <div
+        className='h-dvh transition-all duration-500  w-full 
+      font-[family-name:var(--font-geist-sans)] flex min-w-fit'
+      >
+        <Sidebar />
         {children}
       </div>
     </>

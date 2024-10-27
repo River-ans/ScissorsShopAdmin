@@ -2,7 +2,7 @@
 import TabLogo from '@/assets/tab.svg';
 import { useSidebarStore } from '@/stores/useSidebarStore';
 
-export default function IndexPage() {
+export default function AboutPage() {
   const { isOpen, toggleSidebar } = useSidebarStore();
   return (
     <main className='min-w-80	relative text-primary-900 my-2 mx-2 bg-primary-100 w-full sm:rounded-lg rounded-t-3xl rounded-b-2xl overflow-hidden'>
@@ -22,7 +22,7 @@ export default function IndexPage() {
         >
           <TabLogo width={24} height={24} />
         </button>
-        Dash board
+        about{' '}
       </div>
     </main>
   );
