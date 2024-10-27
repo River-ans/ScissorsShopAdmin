@@ -1,6 +1,6 @@
 import { useSidebarStore } from '@/stores/useSidebarStore';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 interface SidebarItemProps {

@@ -1,4 +1,5 @@
-import Sidebar from '@/components/shared/Sidebar';
+import Overlay from '@/components/shared/Overlay';
+import Sidebar from '@/components/shared/Sidebar/Sidebar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,7 +19,10 @@ export default function MainLayout({
       font-[family-name:var(--font-geist-sans)] flex min-w-fit'
       >
         <Sidebar />
-        {children}
+        <main className='min-w-80	relative text-primary-900 my-2 mx-2 bg-primary-100 w-full sm:rounded-lg rounded-t-3xl rounded-b-2xl overflow-hidden'>
+          <Overlay />
+          {children}
+        </main>
       </div>
     </>
   );

@@ -17,11 +17,12 @@ const Sidebar = () => {
       }`}
     >
       <nav className='min-w-56 overflow-hidden'>
-        <div className='p-7 flex place-content-between text-primary-300'>
-          <Link href={'/'}>
-            <BrandLogoSvg />
-          </Link>
-        </div>
+        <Link
+          href={'/'}
+          className='p-7 flex place-content-between text-primary-300'
+        >
+          <BrandLogoSvg />
+        </Link>
         <ul className='flex flex-col gap-2 font-bold p-4 text-sm '>
           <SidebarItem
             href='/'
