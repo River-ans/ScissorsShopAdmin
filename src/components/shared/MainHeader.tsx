@@ -15,17 +15,17 @@ const MainHeader: React.FC<MainHeaderProps> = ({ title, children }) => {
     <div className='flex items-center gap-2 p-5 place-content-between'>
       <div className='text-2xl text-primary-800 font-bold flex items-center gap-2'>
         <div
-          className={`flex items-center transition-all duration-300 transform ${
+          className={`flex items-center transition-transform duration-300 transform ${
             isOpen
               ? 'opacity-0 -translate-x-10 pointer-events-none'
-              : 'opacity-100 translate-x-0'
+              : 'opacity-100 -translate-x-0'
           }`}
         >
           <ToggleSidebarButton />
         </div>
         <h2
-          className={`transition-all duration-300 transform ${
-            isOpen ? '-translate-x-10' : 'translate-x-0'
+          className={`transition-transform duration-300 transform ${
+            isOpen ? '-translate-x-10' : '-translate-x-0'
           }`}
         >
           {title}

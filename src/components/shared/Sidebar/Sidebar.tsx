@@ -22,7 +22,7 @@ const Sidebar = () => {
           <h1 className='text-2xl font-bold'>SCIZZ</h1>
         </div>
 
-        <ul className='flex flex-col gap-2 font-bold m-4 text-sm '>
+        <ul className='flex flex-col gap-2 font-bold m-5 text-sm '>
           <SidebarItem
             href='/'
             icon={<SquaresLogo width={20} height={20} />}
