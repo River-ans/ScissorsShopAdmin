@@ -7,7 +7,7 @@ export const ToggleSidebarButton = () => {
 
   return (
     <button
-      className='sm:hover:bg-primary-600/10 p-1 rounded-lg transition-all	active:bg-primary-800/10'
+      className='sm:hover:bg-primary-600/10 p-1 rounded-lg transition-all	active:bg-primary-800/10 w-fit'
       onClick={toggleSidebar}
     >
       <TabLogo width={24} height={24} />

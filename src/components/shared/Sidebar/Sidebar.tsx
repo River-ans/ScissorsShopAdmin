@@ -1,11 +1,11 @@
 'use client';
-import Link from 'next/link';
 import React from 'react';
 import SquaresLogo from '@/assets/squares.svg';
 import TagLogo from '@/assets/tag.svg';
-import BrandLogoSvg from '@/components/shared/BrandLogoSvg';
+import CategoryLogo from '@/assets/category.svg';
 import { useSidebarStore } from '@/stores/useSidebarStore';
 import SidebarItem from './SidebarItem';
+import { ToggleSidebarButton } from '../ToggleSidebarButton';
 
 const Sidebar = () => {
   const { isOpen } = useSidebarStore();
@@ -17,13 +17,12 @@ const Sidebar = () => {
       }`}
     >
       <nav className='min-w-56 overflow-hidden'>
-        <Link
-          href={'/'}
-          className='p-7 flex place-content-between text-primary-300'
-        >
-          <BrandLogoSvg />
-        </Link>
-        <ul className='flex flex-col gap-2 font-bold p-4 text-sm '>
+        <div className='pt-7 px-7 flex gap-1 items-center'>
+          <ToggleSidebarButton />
+          <h1 className='text-2xl font-bold'>SCIZZ</h1>
+        </div>
+
+        <ul className='flex flex-col gap-2 font-bold m-4 text-sm '>
           <SidebarItem
             href='/'
             icon={<SquaresLogo width={20} height={20} />}
@@ -31,9 +30,14 @@ const Sidebar = () => {
           />
           <div className='text-primary-400'>Product Management</div>
           <SidebarItem
+            href='/category'
+            icon={<CategoryLogo width={20} height={20} />}
+            label='Category'
+          />
+          <SidebarItem
             href='/brands'
             icon={<TagLogo width={20} height={20} />}
-            label='brands'
+            label='Brands'
           />
         </ul>
       </nav>

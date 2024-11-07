@@ -4,7 +4,7 @@ import MainHeader from '@/components/shared/MainHeader';
 export default function BrandsPage() {
   return (
     <>
-      <MainHeader title='Brands'>
+      <MainHeader title='Category'>
         <Button size='small'>add</Button>
       </MainHeader>
     </>

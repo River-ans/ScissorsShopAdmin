@@ -1,6 +1,5 @@
 import SalesCard from '@/components/dashboard/SalesCard';
 import MainHeader from '@/components/shared/MainHeader';
-import { ToggleSidebarButton } from '@/components/shared/ToggleSidebarButton';
 export default function IndexPage() {
   return (
     <>
