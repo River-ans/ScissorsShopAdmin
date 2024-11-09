@@ -7,7 +7,7 @@ const Overlay: React.FC = () => {
 
   return (
     <div
-      className={`absolute left-0 w-full h-full transition-all duration-500 md:bg-transparent md:pointer-events-none ${
+      className={`absolute left-0 w-full h-full transition-all duration-500 md:bg-transparent z-50 md:pointer-events-none ${
         isOpen ? 'bg-primary-900/80 pointer-events-auto' : 'pointer-events-none'
       }`}
       onClick={isOpen ? toggleSidebar : undefined}

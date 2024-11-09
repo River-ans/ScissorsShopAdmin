@@ -30,6 +30,9 @@ body {
     &.primary {
       @apply bg-primary-900 text-primary-200 font-bold;
     }
+    &.secondary {
+      @apply bg-primary-200 text-primary-900 font-bold;
+    }
     &.small {
       @apply py-1 px-2 text-sm;
     }

@@ -7,7 +7,6 @@ interface SidebarItemProps {
   href: string;
   icon: JSX.Element;
   label: string;
-  isActive?: boolean;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({ href, icon, label }) => {
@@ -21,8 +20,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ href, icon, label }) => {
       toggleSidebar();
     }
   };
-  // 현재 경로가 SidebarItem의 href와 일치하는지 확인하여 active 상태 적용
-  const isActive = pathname === href;
+
+  // 정확히 일치하거나, `/path/...` 구조로 시작할 때만 활성화
+  const isActive =
+    pathname === href || (pathname.startsWith(`${href}/`) && pathname !== '/');
+
   return (
     <li>
       <Link
